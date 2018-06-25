@@ -41,7 +41,7 @@
             <h3>Nurses</h3>
         </div>
     </div>
-    <div class="text-center mcard">
+    <div class="text-center mcard" id="support-staff">
         <img src="icons/img_staff.png" class="mcard-img" alt="doctor" style="width: 230px">
         <div>
             <h3>Support Staff</h3>
@@ -92,10 +92,10 @@
         });
     });
 
-    $('#physician').on('click', function () {
+    $('#support-staff').on('click', function () {
 
         $.ajax({
-            url: "home/physicians.php",
+            url: "home/supportstaff.php",
             type: 'get',
             success: function (data) {
                 loadView(data);

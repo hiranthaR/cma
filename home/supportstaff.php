@@ -1,8 +1,8 @@
 <?php require_once "../headers/session.php"; ?>
 
 <div class="container" style="justify-content: center;display: flex;">
-    <img src="icons/img_report.png" style="width: 30px;height: 50px" alt="">
-    <h1 style="">Illnesses</h1>
+    <img src="icons/img_staff.png" style="width: 70px;height: 60px" alt="">
+    <h1 style="">Support Staff</h1>
 </div>
 
 <div class="container" id="alert"></div>
@@ -14,7 +14,8 @@
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><h3>&#x2315; </h3></span>
         </div>
-        <input type="text" class="form-control" placeholder="Search by Title" id="search" aria-label="Username" aria-describedby="basic-addon1">
+        <input type="text" class="form-control" placeholder="Search by Title" id="search" aria-label="Username"
+               aria-describedby="basic-addon1">
     </div>
     <div class="row">
 
@@ -24,13 +25,18 @@
         <div class="col-12 col-md-3">
             <form id="ill_add" style="background-color: #1b1e2120;border-radius: 5px;padding: 20px">
                 <div class="row">
-                    <h3 class="col-11" id="form-header">Insert new Illness</h3><button type="button" id="close-edit" class="close col-1" hidden>&times;</button></div><br><br>
+                    <h3 class="col-11" id="form-header">Insert new Illness</h3>
+                    <button type="button" id="close-edit" class="close col-1" hidden>&times;</button>
+                </div>
+                <br><br>
                 <input type="text" placeholder="Title" name="title" id="title" required style="width: 100%;"><br><br>
                 <textarea name="description" rows="10" id="description" required style="width: 100%"
                           placeholder="Description..."></textarea><br><br>
 
-                <input type="submit" value="Insert" name="insert" class="btn btn-primary" style="width: 200px;" id="insert">
-                <input type="submit" value="Edit" name="edit" class="btn btn-info" id="edit" style="width: 200px;" hidden>
+                <input type="submit" value="Insert" name="insert" class="btn btn-primary" style="width: 200px;"
+                       id="insert">
+                <input type="submit" value="Edit" name="edit" class="btn btn-info" id="edit" style="width: 200px;"
+                       hidden>
         </div>
         </form>
     </div>
@@ -44,7 +50,7 @@
     $(document).on('click', '.btn-delete', function () {
         var ill_id = $(this).data("id");
 
-        if (ill_code == ill_id){
+        if (ill_code == ill_id) {
 
         }
 
@@ -68,11 +74,11 @@
 
     function loadTable() {
         $.ajax({
-            url: 'database/illness/getillnesses.php',
+            url: 'database/supportstaff/getallsupportstaff.php',
             type: 'get',
             dataType: 'html',
             success: function (data) {
-                document.getElementById("table_holder") .innerHTML = data;
+                document.getElementById("table_holder").innerHTML = data;
                 var scripts = document.getElementById("table_holder").getElementsByTagName("script");
 
                 for (var i = 0; i < scripts.length; i++)
@@ -107,7 +113,7 @@
                     alert("error  " + error);
                 },
             });
-        } else if(!$("#edit").prop("hidden")){
+        } else if (!$("#edit").prop("hidden")) {
 
             // var data = $('#ill_add').serializeArray();
             // data['ill_code'] = ill_code;
@@ -169,10 +175,10 @@
         $.ajax({
             url: 'database/illness/searchillness.php',
             type: 'post',
-            data:{'pattern':$(this).val()},
+            data: {'pattern': $(this).val()},
             dataType: 'html',
             success: function (data) {
-                document.getElementById("table_holder") .innerHTML = data;
+                document.getElementById("table_holder").innerHTML = data;
                 var scripts = document.getElementById("table_holder").getElementsByTagName("script");
 
                 for (var i = 0; i < scripts.length; i++)
@@ -186,4 +192,10 @@
         });
 
     });
+
+    $(document).on('click', '#table-support-staff tr', function (e) {
+        var $emp_no = $(this).find(".emp-no").text();
+        alert($emp_no);
+    });
+
 </script>

@@ -1,4 +1,5 @@
 <?php
+require_once '../../headers/session.php';
 require_once "../connection.php";
 
 $query = "SELECT * FROM illness;";
