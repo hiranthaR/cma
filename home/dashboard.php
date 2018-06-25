@@ -91,7 +91,7 @@
             },
         });
     });
-    
+
     $('#physician').on('click', function () {
 
         $.ajax({
