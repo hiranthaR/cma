@@ -10,7 +10,7 @@
 <?php require_once "../helper.php"; ?>
 
 <div style="margin: 20px">
-    <div class="input-group mb-3" style="width: 400px">
+    <div class="input-group mb-3" style="width: 300px">
         <div class="input-group-prepend">
             <span class="input-group-text" id="basic-addon1"><h3>&#x2315; </h3></span>
         </div>
@@ -22,7 +22,7 @@
             <div id="table_holder"></div>
         </div>
         <div class="col-12 col-md-3">
-            <form id="ill_add" style="background-color: #1b1e2120;border-radius: 5px;padding: 20px">
+            <form id="ill_add" style="background-color: #fffffff0;border-radius: 5px;padding: 20px">
                 <div class="row">
                 <h3 class="col-11" id="form-header">Insert new Illness</h3><button type="button" id="close-edit" class="close col-1" hidden>&times;</button></div><br><br>
                 <input type="text" placeholder="Title" name="title" id="title" required style="width: 100%;"><br><br>

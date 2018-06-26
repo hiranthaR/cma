@@ -22,7 +22,7 @@
             <div id="table_holder"></div>
         </div>
         <div class="col-12 col-md-3">
-            <form id="ill_add" style="background-color: #1b1e2120;border-radius: 5px;padding: 20px">
+            <form id="ill_add" style="background-color: #ffffff90;border-radius: 5px;padding: 20px">
                 <div class="row">
                     <h3 class="col-11" id="form-header">Insert new Illness</h3><button type="button" id="close-edit" class="close col-1" hidden>&times;</button></div><br><br>
                 <input type="text" placeholder="Title" name="title" id="title" required style="width: 100%;"><br><br>

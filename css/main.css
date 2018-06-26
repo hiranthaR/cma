@@ -1,6 +1,7 @@
 body {
-    background-image: url("../images/background.png");
-    background-size: cover;
+    background-image: url("../images/background.jpg");
+    background-size: 100% 130%;
+    background-repeat: no-repeat;
 }
 
 .mcard {
@@ -48,4 +49,8 @@ table th {
     text-align: left;
     background-color: #4CAF50;
     color: white;
+}
+
+.input-error{
+    color: #ff0000;
 }
